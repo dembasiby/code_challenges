@@ -16,6 +16,7 @@ class Trinary
     decimal = []
 
     arr.each do |n|
+      return 0 if ('a'..'z').to_a.include?(n)
       loop do
         decimal << arr[count].to_i * (3 ** i)
         count += 1
