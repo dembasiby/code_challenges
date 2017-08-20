@@ -9,6 +9,8 @@ class Trinary
     calculate_decimal
   end
 
+  private
+
   def calculate_decimal
     arr = @num.split('')
     i = @num.length - 1
