@@ -1,31 +1,18 @@
-require 'pry'
 class Trinary
 
   def initialize(num)
-    @num = num
+    @arr = num.split('')
   end
 
   def to_decimal
-    calculate_decimal
-  end
+    i = @arr.length - 1
+    result = 0
 
-  private
-
-  def calculate_decimal
-    arr = @num.split('')
-    i = @num.length - 1
-    count = 0
-    decimal = []
-
-    arr.each do |n|
-      return 0 if ('a'..'z').to_a.include?(n)
-      loop do
-        decimal << arr[count].to_i * (3 ** i)
-        count += 1
-        i -= 1
-        break if i < 0
-      end
+    @arr.each_with_index do |n, idx|
+      return 0 if n =~ /[^012]/
+      result += @arr[idx].to_i * (3 ** i)
+      i -= 1
     end
-    decimal.reduce(:+)
+    result
   end
 end
