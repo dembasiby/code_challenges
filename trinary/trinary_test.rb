@@ -44,4 +44,8 @@ class TrinaryTest < Minitest::Test
   def test_invalid_trinary_with_digits_is_decimal_0
     assert_equal 0, Trinary.new('0a1b2c').to_decimal
   end
+
+  def test_invalid_trinary_with_digits_2_is_decimal_0
+    assert_equal 0, Trinary.new('345011').to_decimal
+  end
 end
