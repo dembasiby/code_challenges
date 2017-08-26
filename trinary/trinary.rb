@@ -1,7 +1,7 @@
 class Trinary
 
-  def initialize(num)
-    @arr = num.split('')
+  def initialize(num_str)
+    @arr = num_str.split('')
   end
 
   def to_decimal
@@ -13,6 +13,7 @@ class Trinary
       result += @arr[idx].to_i * (3 ** i)
       i -= 1
     end
+
     result
   end
 end
